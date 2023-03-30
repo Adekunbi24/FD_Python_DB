@@ -3,7 +3,6 @@ import pyodbc
 import bcrypt
 from PyQt5.uic import loadUi
 from PyQt5.QtWidgets import *
-#from PyQt5.QtWidgets import QDialog, QApplication, QWidget
 
 class WelcomeScreen(QDialog):
     def __init__(self):
@@ -17,15 +16,11 @@ class WelcomeScreen(QDialog):
 
         if len(username) == 0 or len(password) == 0:
            self.error.setText("Please input all fields.")
-
         else: 
-            
             try:
                 # Set up the connection string
                 server = 'DESKTOP-IF3PE1I\\SQLEXPRESS01'
                 database = 'RattlerBank'
-                SS_username = 'DESKTOP-IF3PE1I\\andys'
-                SS_password = ''
                 driver = '{ODBC Driver 17 for SQL Server}'
                 connection_string = f"DRIVER={driver};SERVER={server};DATABASE={database};Trusted_Connection=yes;"
 
@@ -35,15 +30,20 @@ class WelcomeScreen(QDialog):
                 # Create a cursor
                 cursor = conn.cursor()
 
-                # Execute a query
+                # Execute a query to retrieve the hashed password from the database
                 query = "SELECT Password FROM Employee WHERE Username = ?"
                 cursor.execute(query, username)
 
                 # Fetch the results
-                result_pass = cursor.fetchone()[0]
-                if result_pass == password:
-                    print("Successfully logged in.")
-                    self.error.setText("")
+                result_pass = cursor.fetchone()
+                if result_pass is not None:
+                    hashed_password = result_pass[0].encode('utf-8')
+                    # Use bcrypt library to check if the password matches
+                    if bcrypt.checkpw(password.encode('utf-8'), hashed_password):
+                        print("Successfully logged in.")
+                        self.error.setText("")
+                    else:
+                        self.error.setText("Invalid username or password.")
                 else:
                     self.error.setText("Invalid username or password.")
                     
@@ -51,14 +51,10 @@ class WelcomeScreen(QDialog):
                 cursor.close()
                 conn.close()
 
-                # Print the results
-                print(result_pass)
-
             except pyodbc.Error as e:
                 # Handle any errors that occur during the connection or query execution
                 print(f"Error: {str(e)}")
                 self.error.setText("Invalid login credentials.")           
-
 
 # main
 app = QApplication(sys.argv)
