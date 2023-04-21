@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Rattler Bank Database</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>RB snake.png</normaloff>RB snake.png</iconset>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="bgwidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1201</width>
+     <height>800</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget#bgwidget{
+background-color:qlineargradient(spread:pad, x1:0.242, y1:0.198727, x2:0.957, y2:1, stop:0 rgba(95, 109, 162, 255), stop:1 rgba(255, 255, 255, 255))}</string>
+   </property>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>321</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>RB3.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1201</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(11, 29, 53);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="employee_name">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>241</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="customer_name">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>252</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Heebo</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Heebo&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="account_num">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>252</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Heebo</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Heebo&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="balance">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>252</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial Black</family>
+      <pointsize>12</pointsize>
+      <weight>10</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 87 12pt &quot;Arial Black&quot;;
+color: rgb(11, 29, 53);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="enter_acct_num">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>140</y>
+      <width>411</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 18pt &quot;Heebo&quot;; color:rgb(255, 255, 255)
+</string>
+    </property>
+    <property name="text">
+     <string>Please select an option:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="error">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>100</y>
+      <width>501</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;; 
+color: rgb(190, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="close_button">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>670</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    border-radius: 20px;
+    background-color: rgb(114, 140, 255);
+    font: 9pt &quot;Heebo&quot;;
+}
+
+QPushButton:hover {
+    background-color: rgb(93, 205, 245);
+}
+
+QPushButton:pressed {
+    background-color:rgb(53, 93, 255)
+}
+
+
+</string>
+    </property>
+    <property name="text">
+     <string>Close</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="make_deposit_label">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>15</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 16pt &quot;Gadugi&quot;; color:rgb(255, 255, 255)</string>
+    </property>
+    <property name="text">
+     <string>Account Services</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="new_customer_button">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>260</y>
+      <width>390</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    border-radius: 30px;
+    background-color: rgb(114, 140, 255);
+    font: 12pt &quot;Heebo&quot;;
+}
+
+QPushButton:hover {
+    background-color: rgb(93, 205, 245);
+}
+
+QPushButton:pressed {
+    background-color:rgb(53, 93, 255)
+}
+
+
+</string>
+    </property>
+    <property name="text">
+     <string>Open New Customer Account</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="update_customer_button">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>390</y>
+      <width>390</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    border-radius: 30px;
+    background-color: rgb(114, 140, 255);
+    font: 12pt &quot;Heebo&quot;;
+}
+
+QPushButton:hover {
+    background-color: rgb(93, 205, 245);
+}
+
+QPushButton:pressed {
+    background-color:rgb(53, 93, 255)
+}
+
+
+</string>
+    </property>
+    <property name="text">
+     <string>Update Customer Details</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="close_account_button">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>520</y>
+      <width>390</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    border-radius: 30px;
+    background-color: rgb(114, 140, 255);
+    font: 12pt &quot;Heebo&quot;;
+}
+
+QPushButton:hover {
+    background-color: rgb(93, 205, 245);
+}
+
+QPushButton:pressed {
+    background-color:rgb(53, 93, 255)
+}
+
+
+</string>
+    </property>
+    <property name="text">
+     <string>Close Customer Account</string>
+    </property>
+   </widget>
+   <zorder>label_6</zorder>
+   <zorder>label_2</zorder>
+   <zorder>employee_name</zorder>
+   <zorder>customer_name</zorder>
+   <zorder>account_num</zorder>
+   <zorder>balance</zorder>
+   <zorder>enter_acct_num</zorder>
+   <zorder>error</zorder>
+   <zorder>close_button</zorder>
+   <zorder>make_deposit_label</zorder>
+   <zorder>new_customer_button</zorder>
+   <zorder>update_customer_button</zorder>
+   <zorder>close_account_button</zorder>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

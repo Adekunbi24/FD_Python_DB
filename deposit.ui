@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Rattler Bank Database</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>RB snake.png</normaloff>RB snake.png</iconset>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="bgwidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1201</width>
+     <height>800</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget#bgwidget{
+background-color:qlineargradient(spread:pad, x1:0.242, y1:0.198727, x2:0.957, y2:1, stop:0 rgba(95, 109, 162, 255), stop:1 rgba(255, 255, 255, 255))}</string>
+   </property>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>321</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>RB3.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1201</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(11, 29, 53);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="employee_name">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>241</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_13">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>167</y>
+      <width>411</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Heebo&quot;; color:rgb(255, 255, 255)
+</string>
+    </property>
+    <property name="text">
+     <string>Account Summary</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_14">
+    <property name="geometry">
+     <rect>
+      <x>17</x>
+      <y>162</y>
+      <width>1166</width>
+      <height>49</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(11, 29, 53);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>212</y>
+      <width>1161</width>
+      <height>401</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(225, 225, 225);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>212</y>
+      <width>1161</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_16">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>222</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+font: 8pt &quot;Heebo&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string>Account Holder Name</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_17">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>222</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+font: 8pt &quot;Heebo&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string>Account #</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_18">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>222</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+font: 8pt &quot;Heebo&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string>Branch #</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="customer_name">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>252</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Heebo</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Heebo&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="account_num">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>252</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Heebo</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Heebo&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="branch_num">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>252</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Heebo</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Heebo&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="balance">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>252</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial Black</family>
+      <pointsize>12</pointsize>
+      <weight>10</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 87 12pt &quot;Arial Black&quot;;
+color: rgb(11, 29, 53);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_23">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>222</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+font: 8pt &quot;Heebo&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string>Current Balance</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="customer_ID">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>252</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Heebo</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Heebo&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_25">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>222</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+font: 8pt &quot;Heebo&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string>Customer ID</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="account_type">
+    <property name="geometry">
+     <rect>
+      <x>730</x>
+      <y>252</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Heebo</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Heebo&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_27">
+    <property name="geometry">
+     <rect>
+      <x>730</x>
+      <y>222</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+font: 8pt &quot;Heebo&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string>Account Type</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_28">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>222</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+font: 8pt &quot;Heebo&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string>Open Date</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="open_date">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>252</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Heebo</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Heebo&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="enter_acct_num">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>100</y>
+      <width>261</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Heebo&quot;; color:rgb(255, 255, 255)
+</string>
+    </property>
+    <property name="text">
+     <string>Enter Account Number:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="acct_search_field">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>100</y>
+      <width>271</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit:focus {
+   border: 3px solid rgb(255, 217, 0);
+}</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="balance_2">
+    <property name="geometry">
+     <rect>
+      <x>1000</x>
+      <y>252</y>
+      <width>21</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial Black</family>
+      <pointsize>12</pointsize>
+      <weight>10</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 87 12pt &quot;Arial Black&quot;;
+color: rgb(11, 29, 53);</string>
+    </property>
+    <property name="text">
+     <string>$</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="acct_search_button">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>100</y>
+      <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    border-radius: 20px;
+    background-color: rgb(114, 140, 255);
+    font: 9pt &quot;Heebo&quot;;
+}
+
+QPushButton:hover {
+    background-color: rgb(93, 205, 245);
+}
+
+QPushButton:pressed {
+    background-color:rgb(53, 93, 255)
+}</string>
+    </property>
+    <property name="text">
+     <string>Search</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="error">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>100</y>
+      <width>501</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;; 
+color: rgb(174, 0, 11);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="close_button">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>680</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    border-radius: 20px;
+    background-color: rgb(114, 140, 255);
+    font: 9pt &quot;Heebo&quot;;
+}
+
+QPushButton:hover {
+    background-color: rgb(93, 205, 245);
+}
+
+QPushButton:pressed {
+    background-color:rgb(53, 93, 255)
+}</string>
+    </property>
+    <property name="text">
+     <string>Close</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="enter_acct_num_2">
+    <property name="geometry">
+     <rect>
+      <x>87</x>
+      <y>340</y>
+      <width>281</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Heebo&quot;; 
+</string>
+    </property>
+    <property name="text">
+     <string>Enter Deposit Amount:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="deposit_amt_field">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>340</y>
+      <width>271</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit:focus {
+   border: 3px solid rgb(255, 217, 0);
+}</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="enter_acct_num_3">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>400</y>
+      <width>331</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Heebo&quot;; 
+</string>
+    </property>
+    <property name="text">
+     <string>Confirm Deposit Amount:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="confirm_deposit_amt_field">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>400</y>
+      <width>271</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit:focus {
+   border: 3px solid rgb(255, 217, 0);
+}</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="deposit_button">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>500</y>
+      <width>231</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    border-radius: 25px;
+    background-color: rgb(114, 140, 255);
+    font: 9pt &quot;Heebo&quot;;
+}
+
+QPushButton:hover {
+    background-color: rgb(93, 205, 245);
+}
+
+QPushButton:pressed {
+    background-color:rgb(53, 93, 255)
+}</string>
+    </property>
+    <property name="text">
+     <string>Complete Deposit</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="enter_acct_num_4">
+    <property name="geometry">
+     <rect>
+      <x>781</x>
+      <y>340</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Heebo&quot;; 
+</string>
+    </property>
+    <property name="text">
+     <string>Today's Date:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="todays_date">
+    <property name="geometry">
+     <rect>
+      <x>930</x>
+      <y>340</y>
+      <width>241</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Heebo&quot;; 
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="enter_acct_num_6">
+    <property name="geometry">
+     <rect>
+      <x>780</x>
+      <y>400</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Heebo&quot;; 
+</string>
+    </property>
+    <property name="text">
+     <string>New Balance:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="new_balance">
+    <property name="geometry">
+     <rect>
+      <x>969</x>
+      <y>400</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 87 12pt &quot;Arial Black&quot;;
+color: rgb(11, 29, 53);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="balance_3">
+    <property name="geometry">
+     <rect>
+      <x>950</x>
+      <y>403</y>
+      <width>21</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial Black</family>
+      <pointsize>12</pointsize>
+      <weight>10</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 87 12pt &quot;Arial Black&quot;;
+color: rgb(11, 29, 53);</string>
+    </property>
+    <property name="text">
+     <string>$</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="error_2">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>450</y>
+      <width>771</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;; 
+color: rgb(190, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="success_msg">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>560</y>
+      <width>691</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;; 
+color: rgb(0, 170, 0);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="make_deposit_label">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>15</y>
+      <width>411</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 16pt &quot;Gadugi&quot;; color:rgb(255, 255, 255)</string>
+    </property>
+    <property name="text">
+     <string>Deposit Funds</string>
+    </property>
+   </widget>
+   <zorder>label_6</zorder>
+   <zorder>label_2</zorder>
+   <zorder>employee_name</zorder>
+   <zorder>label_14</zorder>
+   <zorder>label_4</zorder>
+   <zorder>label_5</zorder>
+   <zorder>label_16</zorder>
+   <zorder>label_17</zorder>
+   <zorder>label_18</zorder>
+   <zorder>customer_name</zorder>
+   <zorder>account_num</zorder>
+   <zorder>branch_num</zorder>
+   <zorder>balance</zorder>
+   <zorder>label_23</zorder>
+   <zorder>customer_ID</zorder>
+   <zorder>label_25</zorder>
+   <zorder>account_type</zorder>
+   <zorder>label_27</zorder>
+   <zorder>label_28</zorder>
+   <zorder>open_date</zorder>
+   <zorder>label_13</zorder>
+   <zorder>enter_acct_num</zorder>
+   <zorder>acct_search_field</zorder>
+   <zorder>balance_2</zorder>
+   <zorder>acct_search_button</zorder>
+   <zorder>error</zorder>
+   <zorder>close_button</zorder>
+   <zorder>enter_acct_num_2</zorder>
+   <zorder>deposit_amt_field</zorder>
+   <zorder>enter_acct_num_3</zorder>
+   <zorder>confirm_deposit_amt_field</zorder>
+   <zorder>deposit_button</zorder>
+   <zorder>enter_acct_num_4</zorder>
+   <zorder>todays_date</zorder>
+   <zorder>enter_acct_num_6</zorder>
+   <zorder>new_balance</zorder>
+   <zorder>balance_3</zorder>
+   <zorder>error_2</zorder>
+   <zorder>make_deposit_label</zorder>
+   <zorder>success_msg</zorder>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
