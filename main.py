@@ -1028,7 +1028,7 @@ class ViewSearchCustomerScreen(QDialog):
     def __init__(self, db_connection):
         super(ViewSearchCustomerScreen, self).__init__()
         loadUi("searchcustomer.ui", self)
-        widget.setFixedHeight(1399)          
+        widget.setFixedHeight(950)          
         self.db_connection = db_connection
 
         self.cancel_button.setVisible(False)
@@ -1241,10 +1241,10 @@ class ViewSearchCustomerScreen(QDialog):
                 self.error.setText("")
                 self.loan_num_field.setText(str(account_info[0]))
                 self.loan_type_field.setText(str(account_info[1]))
-                self.loan_amount_field.setText(str(account_info[2]))
+                self.loan_amount_field.setText("{:.2f}".format(float(account_info[2])))
                 self.loan_open_date_field.setText(str(account_info[3]))
                 self.loan_duration_field.setText(str(account_info[4]))
-                self.loan_balance_field.setText(str(account_info[5]))
+                self.loan_balance_field.setText("{:.2f}".format(float(account_info[5])))
                 self.interest_rate_field.setText(str(account_info[6]))
                 self.loan_status_field.setText(str(account_info[7])) 
                 self.no_loan_error.setText("")               
@@ -1316,68 +1316,108 @@ class ViewSearchCustomerScreen(QDialog):
         if not fname.isalpha() or len(fname) > 20:
             self.error.setText("First name must be only letters and less than or equal to 20 characters.")
             return
+        if not fname:
+            self.error.setText("Please enter a first name.")
+            return
 
         mi = self.mi_field.text().strip().upper()
+        if not mi:
+            self.error.setText("Please enter a middle initial.")
         if not mi.isalpha() or len(mi) != 1:
             self.error.setText("Middle initial must be a single letter.")
             return
 
         lname = self.lname_field.text().strip().title()
+        if not lname:
+            self.error.setText("Please enter a last name.")
+            return
         if not lname.isalpha() or len(lname) > 30:
             self.error.setText("Last name must be only letters and less than or equal to 30 characters.")
             return
 
         ssn = self.ssn_field.text().strip()
+        if not ssn:
+            self.error.setText("Please enter a SSN.")
+            return
         if not ssn.isdigit() or len(ssn) != 9:
             self.error.setText("SSN must be exactly 9 digits.")
             return
 
         dob = self.dob_field.text().strip()
+        if not dob:
+            self.error.setText("Please enter a date of birth.")
+            return
         if not re.match(r"^\d{4}-\d{2}-\d{2}$", dob):
             self.error.setText("Date of birth must be in the format YYYY-MM-DD.")
             return
 
         sex = self.sex_field.text().strip().upper()
+        if not sex:
+            self.error.setText("Please enter M or F.")
         if sex not in ('M', 'F'):
             self.error.setText("Sex must be M or F.")
             return
 
         dl_num = self.dl_field.text().strip().upper()
+        if not dl_num:
+            self.error.setText("Please enter a driver's license number.")
+            return
         if not re.match(r"^[A-Z]{2}\d{6}$", dl_num):
             self.error.setText("Driver's license number must be 2 uppercase letters followed by 6 digits.")
             return
 
         street_no = self.street_num_field.text().strip()
+        if not street_no:
+            self.error.setText("Please enter a street number.")
+            return
         if not street_no.isdigit() or len(street_no) > 10:
             self.error.setText("Street number must be only digits and less than or equal to 10 digits.")
             return
 
         street_name = self.street_name_field.text().strip().title()
+        if not street_name:
+            self.error.setText("Please enter a street name.")
+            return
         if not all(c.isalpha() or c.isspace() for c in street_name) or len(street_name) > 30:
             self.error.setText("Street name must be only letters and less than or equal to 30 characters.")
             return
 
         city = self.city_field.text().strip().title()
+        if not city:
+            self.error.setText("Please enter a city.")
+            return
         if not all(c.isalpha() or c.isspace() for c in city) or len(city) > 35:    
             self.error.setText("City must be only letters and less than or equal to 35 characters.")
             return
 
         state = self.state_field.text().strip().upper()
+        if not state:
+            self.error.setText("Please enter a state.")
+            return
         if state != "TX":
             self.error.setText("State must be TX.")
             return
 
         zip_code = self.zip_field.text().strip()
+        if not zip_code:
+            self.error.setText("Please enter a zip code.")
+            return
         if not zip_code.isdigit() or len(zip_code) != 5:
             self.error.setText("Zip code must be exactly 5 digits.")
             return
 
         phone_num = self.phone_num_field.text().strip()
+        if not phone_num:
+            self.error.setText("Please enter a phone number.")
+            return
         if not phone_num.isdigit() or len(phone_num) != 10:
             self.error.setText("Phone number must be exactly 10 digits.")
             return
 
         email = self.email_field.text().strip()
+        if not email:
+            self.error.setText("Please enter an email.")
+            return
         if not re.match(r"^\S+@\S+\.\S+$", email):
             self.error.setText("Email must be in correct format.")
             return
@@ -1525,7 +1565,7 @@ class NewCustomerScreen(QDialog):
     def __init__(self, db_connection):
         super(NewCustomerScreen, self).__init__()
         loadUi("createcustomer.ui", self)
-        widget.setFixedHeight(1399)          
+        widget.setFixedHeight(950)          
         self.db_connection = db_connection
 
         # Make confirm box not visible
@@ -1916,7 +1956,7 @@ class CloseAccountCustomerScreen(QDialog):
     def __init__(self, db_connection):
         super(CloseAccountCustomerScreen, self).__init__()
         loadUi("closeaccount.ui", self)
-        widget.setFixedHeight(1399)          
+        widget.setFixedHeight(950)          
         self.db_connection = db_connection
 
         # make confirm box not visible
@@ -2003,7 +2043,7 @@ class CloseAccountCustomerScreen(QDialog):
 
             # Display success message and close the pop up box
             self.cancel_close()
-            self.success_msg.setText("Customer Account Successfully closed.")
+            self.success_msg.setText("Customer account successfully closed.")
             self.close_account_button.setVisible(False)
 
         except Exception as e:
@@ -2017,9 +2057,48 @@ class CloseAccountCustomerScreen(QDialog):
 
 
     def acct_search(self):
+        # clear all fields
         self.success_msg.setText("")
         self.error.setText("")
+        self.customer_id_field.setText("")
+        self.fname_field.setText("")
+        self.mi_field.setText("")
+        self.lname_field.setText("")
+        self.ssn_field.setText("")
+        self.dob_field.setText("")
+        self.sex_field.setText("")
+        self.dl_field.setText("")
+        self.street_num_field.setText("")
+        self.street_name_field.setText("")
+        self.city_field.setText("")
+        self.state_field.setText("")
+        self.zip_field.setText("")
+        self.phone_num_field.setText("")
+        self.email_field.setText("")     
 
+        self.checking_acct_num_field.setText("")    
+        self.checking_branch_num_field.setText("")    
+        self.checking_open_date.setText("")    
+        self.checking_balance_field.setText("")    
+        self.routing_num_field.setText("")    
+
+        self.savings_acct_num_field.setText("") 
+        self.savings_branch_num_field.setText("") 
+        self.savings_open_date_field.setText("") 
+        self.savings_balance_field.setText("") 
+        self.routing_num_field_savings.setText("") 
+
+        self.error.setText("")
+        self.loan_num_field.setText("")
+        self.loan_type_field.setText("")
+        self.loan_amount_field.setText("")
+        self.loan_open_date_field.setText("")
+        self.loan_duration_field.setText("")
+        self.loan_balance_field.setText("")
+        self.interest_rate_field.setText("")
+        self.loan_status_field.setText("")
+        self.no_loan_error.setText("")
+        
         text = self.search_field.text()
         # Check if the account number field is empty
         if not text:
@@ -2082,7 +2161,10 @@ class CloseAccountCustomerScreen(QDialog):
                 self.zip_field.setText(str(customer_info[12]))
                 self.phone_num_field.setText(str(customer_info[13]))  
                 self.email_field.setText(str(customer_info[14]))                                    
-
+            else:
+                # Display error message if customer not found
+                self.error.setText("Customer not found.")
+            
             # Execute the query to get checking account information
             query = f"""
                 SELECT Account.AccountNo, Account.BranchNo, Account.OpenDate, Account.CurrentBalance
@@ -2149,12 +2231,15 @@ class CloseAccountCustomerScreen(QDialog):
                 self.error.setText("")
                 self.loan_num_field.setText(str(account_info[0]))
                 self.loan_type_field.setText(str(account_info[1]))
-                self.loan_amount_field.setText(str(account_info[2]))
+                self.loan_amount_field.setText("{:.2f}".format(float(account_info[2])))
                 self.loan_open_date_field.setText(str(account_info[3]))
                 self.loan_duration_field.setText(str(account_info[4]))
-                self.loan_balance_field.setText(str(account_info[5]))
+                self.loan_balance_field.setText("{:.2f}".format(float(account_info[5])))
                 self.interest_rate_field.setText(str(account_info[6]))
-                self.loan_status_field.setText(str(account_info[7]))                
+                self.loan_status_field.setText(str(account_info[7]))
+            else:
+                # Display error message if customer not found
+                self.no_loan_error.setText("No loans on file.")                
 
             # Close the cursor and connection
             cursor.close()
@@ -2164,7 +2249,8 @@ class CloseAccountCustomerScreen(QDialog):
             # Handle any errors that occur during the connection or query execution
             print(f"Error: {str(e)}")
             self.error.setText("Error occurred while fetching account information.")
-
+ 
+    
 
 # main
 app = QApplication(sys.argv)
