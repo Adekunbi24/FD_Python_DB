@@ -38,7 +38,7 @@ background-color:qlineargradient(spread:pad, x1:0.242, y1:0.198727, x2:0.957, y2
     <property name="geometry">
      <rect>
       <x>480</x>
-      <y>160</y>
+      <y>170</y>
       <width>221</width>
       <height>121</height>
      </rect>
@@ -48,25 +48,6 @@ background-color:qlineargradient(spread:pad, x1:0.242, y1:0.198727, x2:0.957, y2
     </property>
     <property name="text">
      <string>Welcome</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>170</x>
-      <y>10</y>
-      <width>851</width>
-      <height>131</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>RB words.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="login">
@@ -102,7 +83,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>390</x>
-      <y>250</y>
+      <y>260</y>
       <width>411</width>
       <height>121</height>
      </rect>
@@ -224,16 +205,25 @@ color: rgb(255, 81, 0);</string>
      <bool>true</bool>
     </property>
    </widget>
-   <zorder>label</zorder>
-   <zorder>login</zorder>
-   <zorder>label_3</zorder>
-   <zorder>usernamefield</zorder>
-   <zorder>label_4</zorder>
-   <zorder>label_5</zorder>
-   <zorder>passwordfield</zorder>
-   <zorder>error</zorder>
-   <zorder>label_6</zorder>
-   <zorder>label_2</zorder>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>0</y>
+      <width>581</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>RB snake behind.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources>

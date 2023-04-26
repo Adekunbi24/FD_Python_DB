@@ -580,6 +580,10 @@ class ViewDepositScreen(QDialog):
             if not (round(deposit_amt, 2) == deposit_amt):
                 self.error_2.setText("Please enter correct value.")
                 return
+        # Check if deposit amount exceeds 10000.00 dollars
+            if deposit_amt > 10000.00:
+                self.error_2.setText("Deposit amount cannot exceed $10,000.00.")
+                return
         except ValueError:
             self.error_2.setText("Please enter a valid deposit amount.")
             return
